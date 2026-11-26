@@ -8,7 +8,7 @@ $projectRoot = Resolve-Path (Join-Path $ScriptRoot "..")
 
 Push-Location $projectRoot
 try {
-    Stop-AtlasTvOnnApp -Serial $device
+    Stop-LumaireOnnApp -Serial $device
     $env:ANDROID_SERIAL = $device
     .\gradlew connectedDebugAndroidTest "-Pandroid.testInstrumentationRunnerArguments.class=com.atlas.atlastv.ui.series.SeriesEpisodesConnectedTest"
     if ($LASTEXITCODE -ne 0) { throw "Onn series episode navigation connected test failed." }

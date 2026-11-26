@@ -1,7 +1,7 @@
 package com.atlas.atlastv
 
 object AppMetadata {
-    const val DisplayName = "AtlasTV"
+    const val DisplayName = "Lumaire"
     const val PackageName = "com.atlas.atlastv"
 
     val HomeSections = listOf(

@@ -23,7 +23,7 @@ import com.atlas.atlastv.playback.WatchProgressContentType
 import com.atlas.atlastv.playback.WatchProgressRecord
 import com.atlas.atlastv.playback.WatchProgressStore
 import com.atlas.atlastv.ui.livetv.LiveTvCatalogStateHolder
-import com.atlas.atlastv.ui.theme.AtlasTvTheme
+import com.atlas.atlastv.ui.theme.LumaireTheme
 import com.atlas.atlastv.xtream.model.XtreamCredentials
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -110,7 +110,7 @@ class SeriesEpisodesConnectedTest {
         composeRule.activityRule.scenario.moveToState(Lifecycle.State.RESUMED)
         composeRule.waitForIdle()
         composeRule.activity.setContent {
-            AtlasTvTheme {
+            LumaireTheme {
                 SeriesScreen(
                     stateHolder = holder,
                     onBack = {},

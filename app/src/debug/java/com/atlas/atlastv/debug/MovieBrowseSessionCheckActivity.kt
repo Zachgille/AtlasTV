@@ -5,7 +5,7 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import com.atlas.atlastv.ui.browse.BrowseRow
 import com.atlas.atlastv.ui.movies.*
-import com.atlas.atlastv.ui.theme.AtlasTvTheme
+import com.atlas.atlastv.ui.theme.LumaireTheme
 import kotlinx.coroutines.*
 import java.io.File
 
@@ -40,7 +40,7 @@ class MovieBrowseSessionCheckActivity : ComponentActivity() {
             override suspend fun load(previous: MoviesCatalogState.Ready?) = MoviesCatalogState.Ready("fixture", 0,
                 (0 until intent.getIntExtra("shelf_count", 2).coerceIn(2, 18)).map { movie(it) }, emptyList(), browseRows = listOf(BrowseRow("movies", "Movies", (0 until intent.getIntExtra("shelf_count", 2).coerceIn(2, 18)).map { movie(it) })))
         }, scope)
-        setContent { AtlasTvTheme {
+        setContent { LumaireTheme {
             MoviesScreen(catalog, onBack = { finish() }, onMovieSelected = {}, gridHolder = all,
                 categoryBrowser = categories, watchlistBrowser = watchlist, browseSession = session)
         } }

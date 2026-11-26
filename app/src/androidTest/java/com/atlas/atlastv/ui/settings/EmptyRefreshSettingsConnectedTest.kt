@@ -11,7 +11,7 @@ import androidx.room.Room
 import androidx.test.platform.app.InstrumentationRegistry
 import com.atlas.atlastv.data.catalog.*
 import com.atlas.atlastv.data.db.*
-import com.atlas.atlastv.ui.theme.AtlasTvTheme
+import com.atlas.atlastv.ui.theme.LumaireTheme
 import com.atlas.atlastv.xtream.model.*
 import kotlinx.coroutines.*
 import org.junit.After
@@ -50,7 +50,7 @@ class EmptyRefreshSettingsConnectedTest {
             XtreamCatalogImporter(repository).importMoviesAndSeries(emptyList(), if (usable) listOf(movie(11)) else emptyList(),
                 emptyList(), if (usable) listOf(show(22)) else emptyList())
         })
-        ui.setContent { AtlasTvTheme {
+        ui.setContent { LumaireTheme {
             BackHandler { settingsOpen = false }
             if (settingsOpen) SettingsScreen(holder, { settingsOpen = false }, {})
             else androidx.tv.material3.Text("Library remains available")

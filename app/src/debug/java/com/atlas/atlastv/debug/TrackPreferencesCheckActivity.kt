@@ -12,7 +12,7 @@ import com.atlas.atlastv.playback.*
 import com.atlas.atlastv.ui.debug.DebugLivePlaybackScreen
 import com.atlas.atlastv.ui.livetv.LiveTvChannel
 import com.atlas.atlastv.ui.series.SeriesEpisodeItem
-import com.atlas.atlastv.ui.theme.AtlasTvTheme
+import com.atlas.atlastv.ui.theme.LumaireTheme
 import kotlinx.coroutines.*
 import java.io.File
 import java.util.UUID
@@ -47,7 +47,7 @@ class TrackPreferencesCheckActivity : ComponentActivity() {
             override suspend fun saveAudio(preference: LanguageTrackPreference) { writes++; if (failSave) error("private diagnostic"); store.saveAudio(preference) }
             override suspend fun saveSubtitles(preference: LanguageTrackPreference?) { writes++; if (failSave) error("private diagnostic"); store.saveSubtitles(preference) }
         }, scope)
-        setContent { AtlasTvTheme {
+        setContent { LumaireTheme {
             if (destination) Text("Returned", Modifier.testTag("track_preferences_destination"))
             else key(generation) { DebugLivePlaybackScreen(
                 stream = LiveTvChannel(if (movie) "Local Movie" else "Local Episode", "", 0, "mkv", ""),

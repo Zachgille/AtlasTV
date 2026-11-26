@@ -12,7 +12,7 @@ import com.atlas.atlastv.ui.browse.*
 import com.atlas.atlastv.ui.movies.MovieItem
 import com.atlas.atlastv.ui.series.SeriesItem
 import com.atlas.atlastv.ui.search.*
-import com.atlas.atlastv.ui.theme.AtlasTvTheme
+import com.atlas.atlastv.ui.theme.LumaireTheme
 import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.Channel
 import java.util.concurrent.atomic.AtomicInteger
@@ -57,7 +57,7 @@ class SearchPagingCheckActivity : ComponentActivity() {
     private var selected by mutableStateOf<UnifiedSearchItem?>(null)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent { AtlasTvTheme {
+        setContent { LumaireTheme {
             when (destination) {
                 "home" -> Text("Home",Modifier.testTag("search_check_home"))
                 "playback" -> BrowseSearchButton("Back",{ destination="detail" },"search_check_playback_back")

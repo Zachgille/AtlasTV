@@ -52,7 +52,7 @@ class ProviderSettingsSaveConnectedTest {
             syncs.incrementAndGet(); stage(com.atlas.atlastv.xtream.network.XtreamLoadStage.VodStreams)
             CatalogImportResult(CatalogSyncStatus.Success,100,200,15,10,0,0)
         },bootstrapProviderSettings = account)
-        ui.setContent { com.atlas.atlastv.ui.theme.AtlasTvTheme {
+        ui.setContent { com.atlas.atlastv.ui.theme.LumaireTheme {
             BackHandler { settingsOpen = false }
             if (settingsOpen) SettingsScreen(holder,{ settingsOpen = false },{})
             else androidx.tv.material3.Text("Library available")

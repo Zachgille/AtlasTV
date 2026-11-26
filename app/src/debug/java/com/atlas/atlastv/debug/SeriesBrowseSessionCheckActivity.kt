@@ -8,7 +8,7 @@ import androidx.compose.runtime.*
 import com.atlas.atlastv.ui.browse.BrowseRow
 import com.atlas.atlastv.ui.browse.BrowseSearchButton
 import com.atlas.atlastv.ui.series.*
-import com.atlas.atlastv.ui.theme.AtlasTvTheme
+import com.atlas.atlastv.ui.theme.LumaireTheme
 import kotlinx.coroutines.*
 import java.io.File
 import java.util.concurrent.atomic.AtomicInteger
@@ -56,7 +56,7 @@ class SeriesBrowseSessionCheckActivity : ComponentActivity() {
                 SeriesEpisodeItem("Second episode", 1, 2, 12, "mp4", ""),
                 SeriesEpisodeItem("Next season", 2, 1, 21, "mp4", "")))
         })
-        setContent { AtlasTvTheme {
+        setContent { LumaireTheme {
             if (playback) {
                 BackHandler { playback = false }
                 BrowseSearchButton("Back", { playback = false }, "session_playback_back")

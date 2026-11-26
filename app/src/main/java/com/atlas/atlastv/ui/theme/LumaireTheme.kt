@@ -16,7 +16,7 @@ private val AtlasColors = darkColorScheme(
 
 @OptIn(ExperimentalTvMaterial3Api::class)
 @Composable
-fun AtlasTvTheme(content: @Composable () -> Unit) {
+fun LumaireTheme(content: @Composable () -> Unit) {
     MaterialTheme(
         colorScheme = AtlasColors,
         content = content,

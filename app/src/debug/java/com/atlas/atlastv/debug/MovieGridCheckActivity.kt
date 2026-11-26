@@ -10,7 +10,7 @@ import androidx.tv.material3.Text
 import com.atlas.atlastv.ui.browse.BrowseRow
 import com.atlas.atlastv.ui.browse.BrowseSearchButton
 import com.atlas.atlastv.ui.movies.*
-import com.atlas.atlastv.ui.theme.AtlasTvTheme
+import com.atlas.atlastv.ui.theme.LumaireTheme
 import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.Channel
 import java.util.concurrent.atomic.AtomicInteger
@@ -41,7 +41,7 @@ class MovieGridCheckActivity : ComponentActivity() {
     private var playback by mutableStateOf(false)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent { AtlasTvTheme {
+        setContent { LumaireTheme {
             when {
                 destination -> Text("Home", Modifier.testTag("grid_check_destination"))
                 playback -> BrowseSearchButton("Back", { playback = false }, "grid_check_playback_back")

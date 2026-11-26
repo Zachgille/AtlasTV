@@ -33,7 +33,7 @@ try {
         adb -s $device shell pm clear com.atlas.atlastv | Out-Null
     }
 
-    Write-Host "Launching AtlasTV..."
+    Write-Host "Launching Lumaire..."
     adb -s $device shell am start -n com.atlas.atlastv/.MainActivity | Out-Null
     Start-Sleep -Seconds 3
 
@@ -55,7 +55,7 @@ try {
     Write-Host "Device: physical Onn"
     Write-Host "Saved provider settings: present"
     Write-Host "Credentials printed: no"
-    Write-Host "AtlasTV launched. Settings should show a redacted saved provider and Sync should be available."
+    Write-Host "Lumaire launched. Settings should show a redacted saved provider and Sync should be available."
 } finally {
     Pop-Location
 }

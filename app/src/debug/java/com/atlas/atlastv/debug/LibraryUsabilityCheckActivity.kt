@@ -6,7 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.runtime.*
 import com.atlas.atlastv.ui.home.*
 import com.atlas.atlastv.ui.settings.*
-import com.atlas.atlastv.ui.theme.AtlasTvTheme
+import com.atlas.atlastv.ui.theme.LumaireTheme
 import com.atlas.atlastv.data.catalog.*
 import kotlinx.coroutines.*
 import java.io.File
@@ -35,7 +35,7 @@ class LibraryUsabilityCheckActivity : ComponentActivity() {
         settings=ProviderSettingsStateHolder(store,scope,{ ProviderConnectionResult(true) }, { _, _ ->
             refreshRequests++; syncGate.await(); CatalogImportResult(CatalogSyncStatus.Success,1,2,100,50,0,0)
         })
-        setContent { AtlasTvTheme {
+        setContent { LumaireTheme {
             if (settingsOpen) SettingsScreen(settings,{settingsOpen=false},{},onRefreshCatalog={settings.syncMoviesAndShowsAsync { refreshCallbacks++ }})
             else AtlasHomeScreen(home,onLiveTvSelected={},onMoviesSelected={},onSeriesSelected={},
                 onSettingsSelected={settingsOpen=true},onHomeCardSelected={playbackRequests++},

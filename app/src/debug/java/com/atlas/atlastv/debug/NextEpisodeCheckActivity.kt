@@ -9,7 +9,7 @@ import com.atlas.atlastv.ui.debug.DebugLivePlaybackScreen
 import com.atlas.atlastv.ui.debug.PreparingPlaybackScreen
 import com.atlas.atlastv.ui.livetv.LiveTvChannel
 import com.atlas.atlastv.ui.series.*
-import com.atlas.atlastv.ui.theme.AtlasTvTheme
+import com.atlas.atlastv.ui.theme.LumaireTheme
 import kotlinx.coroutines.delay
 import java.io.File
 import java.util.UUID
@@ -51,7 +51,7 @@ class NextEpisodeCheckActivity : ComponentActivity() {
             if (lookupFails) SeriesEpisodeLoadResult.Failure("Unavailable") else SeriesEpisodeLoadResult.Success(episodes)
         })
         setContent {
-            AtlasTvTheme {
+            LumaireTheme {
                 val scope = rememberCoroutineScope()
                 seriesHolder = remember { SeriesCatalogStateHolder(object : SeriesCatalogSource {
                     override suspend fun load(previous: SeriesCatalogState.Ready?) = previous ?: SeriesCatalogState.Ready(

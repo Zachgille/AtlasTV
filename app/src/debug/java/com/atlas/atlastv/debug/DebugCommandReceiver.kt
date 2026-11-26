@@ -36,7 +36,7 @@ class DebugCommandReceiver : BroadcastReceiver() {
         const val EXTRA_COMMAND = "command"
         const val EXTRA_STREAM_ID = "stream_id"
         const val EXTRA_DURATION_SECONDS = "duration_seconds"
-        private const val TAG = "AtlasTV/DebugCommand"
+        private const val TAG = "Lumaire/DebugCommand"
     }
 }
 

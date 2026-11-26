@@ -11,7 +11,7 @@ import androidx.room.Room
 import androidx.tv.material3.Text
 import com.atlas.atlastv.data.db.AtlasDatabase
 import com.atlas.atlastv.ui.movies.*
-import com.atlas.atlastv.ui.theme.AtlasTvTheme
+import com.atlas.atlastv.ui.theme.LumaireTheme
 import com.atlas.atlastv.xtream.model.XtreamCredentials
 import kotlinx.coroutines.*
 import java.io.File
@@ -63,7 +63,7 @@ class MovieDetailsCacheCheckActivity : ComponentActivity() {
                 }
             }; ready = true
         }
-        setContent { AtlasTvTheme {
+        setContent { LumaireTheme {
             if (!ready) Text("Loading local check", Modifier.testTag("movie_cache_loading"))
             else if (destination) {
                 BackHandler { destination = false }

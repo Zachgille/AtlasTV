@@ -14,7 +14,7 @@ import com.atlas.atlastv.ui.debug.*
 import com.atlas.atlastv.ui.livetv.LiveTvChannel
 import com.atlas.atlastv.ui.movies.*
 import com.atlas.atlastv.ui.series.*
-import com.atlas.atlastv.ui.theme.AtlasTvTheme
+import com.atlas.atlastv.ui.theme.LumaireTheme
 import kotlinx.coroutines.*
 import java.io.File
 import java.util.UUID
@@ -119,7 +119,7 @@ class StartOverCheckActivity : ComponentActivity() {
             } else baseline = existing
             ready = true
         }
-        setContent { AtlasTvTheme {
+        setContent { LumaireTheme {
             val start by starter.state.collectAsState()
             val revision by writer.revision.collectAsState()
             LaunchedEffect(revision) { movieHolder.refreshWatchProgress(); seriesHolder.refreshWatchProgress() }

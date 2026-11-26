@@ -12,14 +12,7 @@ plugins {
 fun String.asBuildConfigString(): String =
     "\"" + replace("\\", "\\\\").replace("\"", "\\\"") + "\""
 
-fun readDebugPlaylistUrl(): String {
-    val secretsFile = rootProject.file("debug-secrets.properties")
-    if (!secretsFile.exists()) return ""
-
-    val properties = Properties()
-    secretsFile.inputStream().use { input -> properties.load(input) }
-    return properties.getProperty("ATLASTV_DEBUG_PLAYLIST_URL", "")
-}
+fun readDebugPlaylistUrl(): String = readDebugSecretProperty("LUMAIRE_DEBUG_PLAYLIST_URL")
 
 fun readDebugSecretProperty(name: String): String {
     val secretsFile = rootProject.file("debug-secrets.properties")
@@ -27,7 +20,9 @@ fun readDebugSecretProperty(name: String): String {
 
     val properties = Properties()
     secretsFile.inputStream().use { input -> properties.load(input) }
-    return properties.getProperty(name, "")
+    // Existing private setup files continue working after the product rename.
+    return properties.getProperty(name)
+        ?: properties.getProperty(name.replaceFirst("LUMAIRE_", "ATLASTV_"), "")
 }
 
 // Existing personal-use snapshot; raw datasets/account files are never copied into an APK.
@@ -99,32 +94,32 @@ android {
         debug {
             buildConfigField(
                 "String",
-                "ATLASTV_DEBUG_PLAYLIST_URL",
+                "LUMAIRE_DEBUG_PLAYLIST_URL",
                 readDebugPlaylistUrl().asBuildConfigString(),
             )
             buildConfigField(
                 "String",
-                "ATLASTV_DEBUG_XTREAM_BASE_URL",
-                readDebugSecretProperty("ATLASTV_DEBUG_XTREAM_BASE_URL").asBuildConfigString(),
+                "LUMAIRE_DEBUG_XTREAM_BASE_URL",
+                readDebugSecretProperty("LUMAIRE_DEBUG_XTREAM_BASE_URL").asBuildConfigString(),
             )
             buildConfigField(
                 "String",
-                "ATLASTV_DEBUG_XTREAM_USERNAME",
-                readDebugSecretProperty("ATLASTV_DEBUG_XTREAM_USERNAME").asBuildConfigString(),
+                "LUMAIRE_DEBUG_XTREAM_USERNAME",
+                readDebugSecretProperty("LUMAIRE_DEBUG_XTREAM_USERNAME").asBuildConfigString(),
             )
             buildConfigField(
                 "String",
-                "ATLASTV_DEBUG_XTREAM_PASSWORD",
-                readDebugSecretProperty("ATLASTV_DEBUG_XTREAM_PASSWORD").asBuildConfigString(),
+                "LUMAIRE_DEBUG_XTREAM_PASSWORD",
+                readDebugSecretProperty("LUMAIRE_DEBUG_XTREAM_PASSWORD").asBuildConfigString(),
             )
         }
 
         release {
             isMinifyEnabled = false
-            buildConfigField("String", "ATLASTV_DEBUG_PLAYLIST_URL", "".asBuildConfigString())
-            buildConfigField("String", "ATLASTV_DEBUG_XTREAM_BASE_URL", "".asBuildConfigString())
-            buildConfigField("String", "ATLASTV_DEBUG_XTREAM_USERNAME", "".asBuildConfigString())
-            buildConfigField("String", "ATLASTV_DEBUG_XTREAM_PASSWORD", "".asBuildConfigString())
+            buildConfigField("String", "LUMAIRE_DEBUG_PLAYLIST_URL", "".asBuildConfigString())
+            buildConfigField("String", "LUMAIRE_DEBUG_XTREAM_BASE_URL", "".asBuildConfigString())
+            buildConfigField("String", "LUMAIRE_DEBUG_XTREAM_USERNAME", "".asBuildConfigString())
+            buildConfigField("String", "LUMAIRE_DEBUG_XTREAM_PASSWORD", "".asBuildConfigString())
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro",

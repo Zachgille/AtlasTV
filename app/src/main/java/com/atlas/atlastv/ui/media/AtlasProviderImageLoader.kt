@@ -79,7 +79,7 @@ object AtlasProviderImageLoader {
                 val address = imageIndex?.resolveAsync(safe) ?: AtlasProviderImageRegistry.resolve(safe) ?: return@fetch null
                 val request = Request.Builder().url(address)
                     .header("Accept", "image/avif,image/webp,image/apng,image/*,*/*;q=0.8")
-                    .header("User-Agent", "AtlasTV/1.0").build()
+                    .header("User-Agent", "Lumaire/1.0").build()
                 val bytes = download(request) ?: return@fetch null
                 currentCoroutineContext().ensureActive()
                 val bitmap = decode(bytes, target) ?: return@fetch null

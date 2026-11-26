@@ -20,7 +20,7 @@ import androidx.test.platform.app.InstrumentationRegistry
 import androidx.tv.material3.LocalContentColor
 import androidx.tv.material3.LocalTextStyle
 import androidx.tv.material3.Text
-import com.atlas.atlastv.ui.theme.AtlasTvTheme
+import com.atlas.atlastv.ui.theme.LumaireTheme
 import org.junit.Assert.*
 import org.junit.Rule
 import org.junit.Test
@@ -124,7 +124,7 @@ class AtlasLabelConnectedTest {
             Sample("Café — 用户 🔐 مرحبا\nA second line", style = TextStyle(fontSize = 16.sp, lineHeight = 22.sp, color = Color.Cyan)),
             Sample("", min = 2),
             Sample("A very long line that must ellipsize without wrapping around to a second line", max = 1, wrap = false))
-        ui.setContent { AtlasTvTheme { CompositionLocalProvider(
+        ui.setContent { LumaireTheme { CompositionLocalProvider(
             LocalTextStyle provides TextStyle(fontSize = 16.sp, lineHeight = 22.sp, fontWeight = FontWeight.Medium),
             LocalContentColor provides Color.White) {
             Column(Modifier.fillMaxSize().background(Color.Black).padding(20.dp)) {
@@ -140,7 +140,7 @@ class AtlasLabelConnectedTest {
         val explicit = TextStyle(color = Color.Cyan, fontSize = 14.sp, lineHeight = 18.sp, fontWeight = FontWeight.Light)
         fun samples() = listOf(Sample(text), Sample(text, style = explicit),
             Sample(text, style = explicit, color = Color.White, weight = FontWeight.Bold, size = 18.sp, height = 24.sp))
-        ui.setContent { AtlasTvTheme { CompositionLocalProvider(
+        ui.setContent { LumaireTheme { CompositionLocalProvider(
             LocalTextStyle provides TextStyle(fontSize = 16.sp, lineHeight = 22.sp), LocalContentColor provides contentColor) {
             Column(Modifier.fillMaxSize().background(Color.Black).padding(20.dp)) {
                 samples().forEachIndexed { index, sample -> pair(sample, index) }
@@ -158,7 +158,7 @@ class AtlasLabelConnectedTest {
             Sample("6m left", max = 1, size = 12.sp, height = 16.sp),
             Sample("Café — the final voyage 🛰️", max = 1),
             Sample("At 2:00", max = 1, size = 12.sp, height = 16.sp))
-        ui.setContent { AtlasTvTheme { CompositionLocalProvider(
+        ui.setContent { LumaireTheme { CompositionLocalProvider(
             LocalTextStyle provides TextStyle(fontSize = 16.sp, lineHeight = 22.sp),
             LocalContentColor provides Color.White) {
             Column(Modifier.fillMaxSize().background(Color.Black).padding(20.dp)) {

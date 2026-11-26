@@ -23,7 +23,7 @@ function Resolve-OnnDevice {
     return $device
 }
 
-function Stop-AtlasTvOnnApp {
+function Stop-LumaireOnnApp {
     param([string] $Serial)
     if ([string]::IsNullOrWhiteSpace($Serial)) { throw "Onn serial is required." }
     if ($Serial -like "emulator-*") { throw "Refusing to run against emulator serial '$Serial'." }

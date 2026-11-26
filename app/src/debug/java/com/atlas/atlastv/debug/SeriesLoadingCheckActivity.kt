@@ -11,7 +11,7 @@ import androidx.compose.ui.platform.testTag
 import androidx.tv.material3.Text
 import com.atlas.atlastv.ui.browse.BrowseRow
 import com.atlas.atlastv.ui.series.*
-import com.atlas.atlastv.ui.theme.AtlasTvTheme
+import com.atlas.atlastv.ui.theme.LumaireTheme
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -46,7 +46,7 @@ class SeriesLoadingCheckActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            AtlasTvTheme {
+            LumaireTheme {
                 if (destination) Text("Home", Modifier.testTag("series_check_destination"))
                 else if (openedEpisodeId != null) {
                     androidx.activity.compose.BackHandler { openedEpisodeId = null }

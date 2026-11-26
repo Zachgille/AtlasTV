@@ -12,7 +12,7 @@ import com.atlas.atlastv.data.db.*
 import com.atlas.atlastv.playback.*
 import com.atlas.atlastv.ui.movies.MovieItem
 import com.atlas.atlastv.ui.series.SeriesItem
-import com.atlas.atlastv.ui.theme.AtlasTvTheme
+import com.atlas.atlastv.ui.theme.LumaireTheme
 import kotlinx.coroutines.*
 import org.junit.After
 import org.junit.Assert.*
@@ -56,7 +56,7 @@ class ContinueWatchingUndoConnectedTest {
         home = HomeShellStateHolder({ HomeLoadResult(HomeShellMapper().map("fixture",0,
             listOf(MovieItem("Arrival","Movies",1,"mp4","room://fixture")),listOf(SeriesItem("The Sample Show","Shows",3)),
             emptySet(),continueWatching = writer.loadSnapshot().continueWatching())) })
-        ui.setContent { AtlasTvTheme {
+        ui.setContent { LumaireTheme {
             val revision by writer.revision.collectAsState()
             LaunchedEffect(revision) { home.refresh() }
             AtlasHomeScreen(home,onLiveTvSelected = {},onMoviesSelected = {},onSeriesSelected = {},

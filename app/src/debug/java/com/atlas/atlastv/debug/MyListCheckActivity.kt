@@ -9,7 +9,7 @@ import com.atlas.atlastv.ui.home.*
 import com.atlas.atlastv.ui.movies.*
 import com.atlas.atlastv.ui.series.*
 import com.atlas.atlastv.ui.mylist.*
-import com.atlas.atlastv.ui.theme.AtlasTvTheme
+import com.atlas.atlastv.ui.theme.LumaireTheme
 import kotlinx.coroutines.*
 import java.util.concurrent.atomic.AtomicInteger
 
@@ -86,7 +86,7 @@ class MyListCheckActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         home.rememberNavDeparture("top_nav_item_my_list")
-        setContent { AtlasTvTheme {
+        setContent { LumaireTheme {
             when (destination) {
                 "home" -> AtlasHomeScreen(home, onLiveTvSelected = {}, onMoviesSelected = {}, onSeriesSelected = {}, onMyListSelected = {
                     home.rememberNavDeparture("top_nav_item_my_list"); destination = "list"

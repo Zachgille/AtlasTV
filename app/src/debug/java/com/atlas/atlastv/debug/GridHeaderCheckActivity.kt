@@ -7,7 +7,7 @@ import androidx.activity.compose.BackHandler
 import androidx.compose.runtime.*
 import com.atlas.atlastv.ui.browse.*
 import com.atlas.atlastv.ui.media.AtlasImageRef
-import com.atlas.atlastv.ui.theme.AtlasTvTheme
+import com.atlas.atlastv.ui.theme.LumaireTheme
 import kotlinx.coroutines.CompletableDeferred
 import java.util.concurrent.atomic.AtomicInteger
 
@@ -32,7 +32,7 @@ class GridHeaderCheckActivity : ComponentActivity() {
     }, { it.id }, "Couldn't load movies. Try again.", allowEmptyRefresh = true)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent { AtlasTvTheme {
+        setContent { LumaireTheme {
             if (destination != null) {
                 BackHandler { destination = null }
                 BrowseSearchButton("Back", { destination = null }, "grid_header_detail_back")

@@ -12,7 +12,7 @@ import androidx.tv.material3.Text
 import com.atlas.atlastv.data.db.*
 import com.atlas.atlastv.data.discovery.*
 import com.atlas.atlastv.ui.home.*
-import com.atlas.atlastv.ui.theme.AtlasTvTheme
+import com.atlas.atlastv.ui.theme.LumaireTheme
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.flow
 import java.time.Instant
@@ -63,7 +63,7 @@ class DiscoveryCheckActivity : ComponentActivity() {
             try { genreRelease.await() } catch (cancelled: CancellationException) { genreCancellations++; throw cancelled }
             emit(stage(DiscoveryCollectionPhase.All, true))
         } }))
-        setContent { AtlasTvTheme {
+        setContent { LumaireTheme {
             if(destination!=null) { BackHandler { destination=null }; Text(destination!!,Modifier.testTag("discovery_destination")) }
             else if(collectionOpen) DiscoveryCollectionScreen(browser,0,onBack={collectionOpen=false},onItem={selected=it;detailFromCollection=true;destination="Details ${it.contentType} ${it.streamId}"})
             else AtlasHomeScreen(holder,onLiveTvSelected={},onMoviesSelected={},onSeriesSelected={},

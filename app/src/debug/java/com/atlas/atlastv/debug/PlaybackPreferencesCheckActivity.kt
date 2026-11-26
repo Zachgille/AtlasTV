@@ -9,7 +9,7 @@ import com.atlas.atlastv.data.catalog.CatalogImportResult
 import com.atlas.atlastv.data.catalog.CatalogSyncStatus
 import com.atlas.atlastv.playback.*
 import com.atlas.atlastv.ui.settings.*
-import com.atlas.atlastv.ui.theme.AtlasTvTheme
+import com.atlas.atlastv.ui.theme.LumaireTheme
 import kotlinx.coroutines.*
 import java.io.File
 import java.util.UUID
@@ -40,7 +40,7 @@ class PlaybackPreferencesCheckActivity : ComponentActivity() {
         val settingsFile = File.createTempFile("autoplay-provider-check-", ".json", cacheDir).also { providerFile = it }
         val settings = ProviderSettingsStateHolder(ProviderSettingsStore(settingsFile), uiScope,
             { ProviderConnectionResult(true) }, { _, _ -> CatalogImportResult(CatalogSyncStatus.Success, 0, 0, 0, 0, 0, 0) })
-        setContent { AtlasTvTheme { SettingsScreen(settings, onBack = { finish() }, onAdvancedDiagnostics = {}, playbackPreferences = preferences) } }
+        setContent { LumaireTheme { SettingsScreen(settings, onBack = { finish() }, onAdvancedDiagnostics = {}, playbackPreferences = preferences) } }
     }
     override fun onDestroy() { uiScope.cancel(); storageScope.cancel(); providerFile?.delete(); super.onDestroy() }
 }

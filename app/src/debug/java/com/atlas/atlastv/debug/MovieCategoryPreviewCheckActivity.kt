@@ -7,7 +7,7 @@ import androidx.activity.compose.BackHandler
 import com.atlas.atlastv.ui.browse.BrowseSearchButton
 import androidx.compose.runtime.*
 import com.atlas.atlastv.ui.movies.*
-import com.atlas.atlastv.ui.theme.AtlasTvTheme
+import com.atlas.atlastv.ui.theme.LumaireTheme
 import kotlinx.coroutines.*
 import java.util.concurrent.CopyOnWriteArrayList
 
@@ -44,7 +44,7 @@ class MovieCategoryPreviewCheckActivity : ComponentActivity() {
                 else library + first.copy(streamId = 100, categoryName = "Comedy")
             }
         }, scope)
-        setContent { AtlasTvTheme {
+        setContent { LumaireTheme {
             if (playback) {
                 BackHandler { playback = false }
                 BrowseSearchButton("Back", { playback = false }, "category_mock_playback_back")

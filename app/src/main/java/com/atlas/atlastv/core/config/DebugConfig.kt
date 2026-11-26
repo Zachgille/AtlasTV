@@ -6,13 +6,13 @@ import com.atlas.atlastv.xtream.model.XtreamCredentials
 
 object DebugConfig {
     val debugPlaylistUrl: String
-        get() = BuildConfig.ATLASTV_DEBUG_PLAYLIST_URL
+        get() = BuildConfig.LUMAIRE_DEBUG_PLAYLIST_URL
 
     val debugXtreamCredentials: XtreamCredentials?
         get() {
-            val baseUrl = BuildConfig.ATLASTV_DEBUG_XTREAM_BASE_URL
-            val username = BuildConfig.ATLASTV_DEBUG_XTREAM_USERNAME
-            val password = BuildConfig.ATLASTV_DEBUG_XTREAM_PASSWORD
+            val baseUrl = BuildConfig.LUMAIRE_DEBUG_XTREAM_BASE_URL
+            val username = BuildConfig.LUMAIRE_DEBUG_XTREAM_USERNAME
+            val password = BuildConfig.LUMAIRE_DEBUG_XTREAM_PASSWORD
             return if (baseUrl.isBlank() || username.isBlank() || password.isBlank()) {
                 null
             } else {
@@ -26,9 +26,9 @@ object DebugConfig {
 
     val debugXtreamConfigStatus: DebugXtreamConfigStatus
         get() {
-            val baseUrl = BuildConfig.ATLASTV_DEBUG_XTREAM_BASE_URL
-            val username = BuildConfig.ATLASTV_DEBUG_XTREAM_USERNAME
-            val password = BuildConfig.ATLASTV_DEBUG_XTREAM_PASSWORD
+            val baseUrl = BuildConfig.LUMAIRE_DEBUG_XTREAM_BASE_URL
+            val username = BuildConfig.LUMAIRE_DEBUG_XTREAM_USERNAME
+            val password = BuildConfig.LUMAIRE_DEBUG_XTREAM_PASSWORD
             return DebugXtreamConfigStatus(
                 hasBaseUrl = baseUrl.isNotBlank(),
                 hasUsername = username.isNotBlank(),

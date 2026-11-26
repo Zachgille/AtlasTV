@@ -16,7 +16,7 @@ import com.atlas.atlastv.ui.home.HomeContentType
 import com.atlas.atlastv.ui.home.HomeLoadResult
 import com.atlas.atlastv.ui.home.HomeShellState
 import com.atlas.atlastv.ui.home.HomeShellStateHolder
-import com.atlas.atlastv.ui.theme.AtlasTvTheme
+import com.atlas.atlastv.ui.theme.LumaireTheme
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.channels.Channel
 import java.util.concurrent.atomic.AtomicInteger
@@ -34,7 +34,7 @@ class HomeLoadingCheckActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            AtlasTvTheme {
+            LumaireTheme {
                 if (destination != null) Text(destination!!, modifier = Modifier.testTag("home_check_destination"))
                 else AtlasHomeScreen(
                     stateHolder = holder,

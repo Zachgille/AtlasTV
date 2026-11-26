@@ -16,7 +16,7 @@ import com.atlas.atlastv.ui.components.LocalPosterArtworkLoader
 import com.atlas.atlastv.ui.home.*
 import com.atlas.atlastv.ui.media.*
 import com.atlas.atlastv.ui.movies.*
-import com.atlas.atlastv.ui.theme.AtlasTvTheme
+import com.atlas.atlastv.ui.theme.LumaireTheme
 import com.atlas.atlastv.xtream.model.XtreamCredentials
 import kotlinx.coroutines.*
 import java.io.File
@@ -78,7 +78,7 @@ class HomeCardPostersCheckActivity : ComponentActivity() {
             }
             ready = true
         }
-        setContent { AtlasTvTheme { CompositionLocalProvider(LocalPosterArtworkLoader provides imageLoader) {
+        setContent { LumaireTheme { CompositionLocalProvider(LocalPosterArtworkLoader provides imageLoader) {
             if (!ready) Text("Loading local check", Modifier.testTag("poster_check_loading"))
             else if (destination != null) { BackHandler { destination = null }; Text(destination!!, Modifier.testTag("poster_check_destination")) }
             else AtlasHomeScreen(holder, onSearchSelected = { destination = "Search" }, onLiveTvSelected = {}, onMoviesSelected = {}, onSeriesSelected = {},

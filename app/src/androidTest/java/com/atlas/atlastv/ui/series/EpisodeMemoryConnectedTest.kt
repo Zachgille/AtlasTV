@@ -8,7 +8,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.test.platform.app.InstrumentationRegistry
 import com.atlas.atlastv.debug.SeriesLoadingCheckActivity
 import com.atlas.atlastv.playback.*
-import com.atlas.atlastv.ui.theme.AtlasTvTheme
+import com.atlas.atlastv.ui.theme.LumaireTheme
 import org.junit.Assert.assertEquals
 import org.junit.Rule
 import org.junit.Test
@@ -40,7 +40,7 @@ class EpisodeMemoryConnectedTest {
                 }
                 val holder = SeriesCatalogStateHolder(source, activity.lifecycleScope,
                     loadEpisodes = { SeriesEpisodeLoadResult.Success(episodes) }, episodeContext = { "fixture-provider" })
-                activity.setContent { AtlasTvTheme {
+                activity.setContent { LumaireTheme {
                     SeriesScreen(holder, onBack = {}, onEpisodeSelected = { _, episode -> played.set(episode.episodeId) },
                         openSelectedSeriesDetailsRequest = 1, selectedSeriesForDetails = show,
                         selectedEpisodeForDetails = episodes.first { it.episodeId == 22 }.takeIf { restoredPlayback.get() == 0 },

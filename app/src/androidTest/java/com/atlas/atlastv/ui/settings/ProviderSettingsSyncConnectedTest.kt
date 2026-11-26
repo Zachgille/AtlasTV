@@ -17,7 +17,7 @@ import com.atlas.atlastv.ui.search.UnifiedSearchState
 import com.atlas.atlastv.ui.search.buildUnifiedSearchState
 import com.atlas.atlastv.ui.series.SeriesCatalogState
 import com.atlas.atlastv.ui.series.SeriesCatalogStateHolder
-import com.atlas.atlastv.ui.theme.AtlasTvTheme
+import com.atlas.atlastv.ui.theme.LumaireTheme
 import com.atlas.atlastv.xtream.model.XtreamCategory
 import com.atlas.atlastv.xtream.model.XtreamSeries
 import com.atlas.atlastv.xtream.model.XtreamVodStream
@@ -60,7 +60,7 @@ class ProviderSettingsSyncConnectedTest {
     fun settingsSaveTestAndSyncImportRoomRowsWithoutDebugJson() {
         val holder = holder()
         composeRule.setContent {
-            AtlasTvTheme {
+            LumaireTheme {
                 SettingsScreen(
                     stateHolder = holder,
                     onBack = {},

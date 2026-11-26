@@ -6,7 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.runtime.*
 import com.atlas.atlastv.playback.*
 import com.atlas.atlastv.ui.debug.PreparingPlaybackScreen
-import com.atlas.atlastv.ui.theme.AtlasTvTheme
+import com.atlas.atlastv.ui.theme.LumaireTheme
 import kotlinx.coroutines.channels.Channel
 
 /** Controlled resume lookup with no storage, provider or personal-data dependency. */
@@ -17,7 +17,7 @@ class PlaybackStartCheckActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            AtlasTvTheme {
+            LumaireTheme {
                 val scope = rememberCoroutineScope()
                 val holder = remember { PlaybackStartStateHolder(scope) { lookups++; responses.receive().getOrThrow() } }
                 val state by holder.state.collectAsState()

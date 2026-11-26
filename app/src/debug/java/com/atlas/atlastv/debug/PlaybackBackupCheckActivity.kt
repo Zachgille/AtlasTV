@@ -7,7 +7,7 @@ import androidx.compose.runtime.*
 import com.atlas.atlastv.playback.*
 import com.atlas.atlastv.ui.debug.DebugLivePlaybackScreen
 import com.atlas.atlastv.ui.livetv.LiveTvChannel
-import com.atlas.atlastv.ui.theme.AtlasTvTheme
+import com.atlas.atlastv.ui.theme.LumaireTheme
 import com.atlas.atlastv.xtream.model.XtreamCredentials
 import com.atlas.atlastv.xtream.network.XtreamEndpointBuilder
 import kotlinx.coroutines.Dispatchers
@@ -30,7 +30,7 @@ class PlaybackBackupCheckActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         store = WatchProgressStore(File(cacheDir, "backup-playback-${UUID.randomUUID()}.json"))
         writer = WatchProgressCoordinator.forStore(store)
-        setContent { AtlasTvTheme {
+        setContent { LumaireTheme {
             var ready by remember { mutableStateOf(false) }
             LaunchedEffect(Unit) {
                 withContext(Dispatchers.IO) {

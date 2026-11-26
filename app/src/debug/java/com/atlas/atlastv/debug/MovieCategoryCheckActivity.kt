@@ -9,7 +9,7 @@ import androidx.compose.ui.platform.testTag
 import androidx.tv.material3.Text
 import com.atlas.atlastv.ui.browse.*
 import com.atlas.atlastv.ui.movies.*
-import com.atlas.atlastv.ui.theme.AtlasTvTheme
+import com.atlas.atlastv.ui.theme.LumaireTheme
 import kotlinx.coroutines.*
 import java.util.concurrent.atomic.AtomicInteger
 
@@ -55,7 +55,7 @@ class MovieCategoryCheckActivity : ComponentActivity() {
                 return MoviesCatalogState.Ready("check", 0, rows.flatMap { it.items }, emptyList(), browseRows = rows)
             }
         }, scope)
-        setContent { AtlasTvTheme {
+        setContent { LumaireTheme {
             when {
                 destination -> Text("Home", Modifier.testTag("category_check_destination"))
                 playback -> BrowseSearchButton("Back", { playback = false }, "category_check_playback_back")

@@ -123,11 +123,14 @@ Assert-Text $settingsText "provider_sync_status"
 Assert-Text $settingsText "provider_sync_stage"
 
 if ($UseEnvironmentCredentials) {
-    $baseUrl = $env:ATLASTV_ONN_BASE_URL
-    $username = $env:ATLASTV_ONN_USERNAME
-    $password = $env:ATLASTV_ONN_PASSWORD
+    $baseUrl = $env:LUMAIRE_ONN_BASE_URL
+    $username = $env:LUMAIRE_ONN_USERNAME
+    $password = $env:LUMAIRE_ONN_PASSWORD
+    if (!$baseUrl) { $baseUrl = $env:ATLASTV_ONN_BASE_URL }
+    if (!$username) { $username = $env:ATLASTV_ONN_USERNAME }
+    if (!$password) { $password = $env:ATLASTV_ONN_PASSWORD }
     if ([string]::IsNullOrWhiteSpace($baseUrl) -or [string]::IsNullOrWhiteSpace($username) -or [string]::IsNullOrWhiteSpace($password)) {
-        throw "UseEnvironmentCredentials requires ATLASTV_ONN_BASE_URL, ATLASTV_ONN_USERNAME, and ATLASTV_ONN_PASSWORD."
+        throw "UseEnvironmentCredentials requires LUMAIRE_ONN_BASE_URL, LUMAIRE_ONN_USERNAME, and LUMAIRE_ONN_PASSWORD."
     }
     # Focus first field from Settings and type via normal input. Values are not printed or saved in dumps.
     1..4 | ForEach-Object { Send-Key -Device $device -Key "KEYCODE_DPAD_LEFT" }

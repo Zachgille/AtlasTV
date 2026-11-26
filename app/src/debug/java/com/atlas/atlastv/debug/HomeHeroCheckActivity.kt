@@ -10,7 +10,7 @@ import androidx.compose.ui.platform.testTag
 import androidx.tv.material3.Text
 import com.atlas.atlastv.ui.home.*
 import com.atlas.atlastv.ui.settings.*
-import com.atlas.atlastv.ui.theme.AtlasTvTheme
+import com.atlas.atlastv.ui.theme.LumaireTheme
 import kotlinx.coroutines.channels.Channel
 import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.CopyOnWriteArrayList
@@ -58,7 +58,7 @@ class HomeHeroCheckActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         intent.getStringExtra("movie_title")?.let { movieTitle = it }
-        setContent { AtlasTvTheme {
+        setContent { LumaireTheme {
             if (destination != null) {
                 BackHandler { returnHome() }
                 Text(destination!!, Modifier.testTag("home_hero_destination"))

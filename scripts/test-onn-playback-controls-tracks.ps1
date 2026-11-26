@@ -56,7 +56,7 @@ try {
     powershell -ExecutionPolicy Bypass -File $importSafeCache -DeviceSerial $device -TimeoutSeconds 300 |
         Set-Content -LiteralPath (Join-Path $dumpDir "import-safe-catalog-cache.txt") -Encoding UTF8
 
-    Stop-AtlasTvOnnApp -Serial $device
+    Stop-LumaireOnnApp -Serial $device
     & adb -s $device shell am start -S `
         -n com.atlas.atlastv/.MainActivity `
         -a com.atlas.atlastv.DEBUG_OPEN_SERIES_PLAYBACK `

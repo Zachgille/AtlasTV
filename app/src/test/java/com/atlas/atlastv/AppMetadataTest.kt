@@ -7,7 +7,7 @@ import org.junit.Test
 class AppMetadataTest {
     @Test
     fun appMetadataMatchesScaffoldRequirements() {
-        assertEquals("AtlasTV", AppMetadata.DisplayName)
+        assertEquals("Lumaire", AppMetadata.DisplayName)
         assertEquals("com.atlas.atlastv", AppMetadata.PackageName)
         assertTrue(AppMetadata.HomeSections.contains("Continue Watching"))
         assertTrue(AppMetadata.HomeSections.contains("Movies"))

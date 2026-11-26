@@ -38,7 +38,7 @@ internal fun HomeHero(card: HomeCard?, metadata: HomeHeroMetadata, fromSaved: Bo
             .65f to AtlasBackground.copy(alpha = .72f), 1f to AtlasBackground.copy(alpha = .06f))))
         Column(Modifier.fillMaxWidth(.66f).fillMaxHeight().padding(12.dp), verticalArrangement = Arrangement.spacedBy(6.dp)) {
             Column(Modifier.weight(1f).testTag(if (fromSaved) "hero_saved_info" else "hero_online_info"), verticalArrangement = Arrangement.spacedBy(6.dp)) {
-                AtlasPosterLabel(displayTitle(card?.title ?: "AtlasTV"), color = AtlasText, style = MaterialTheme.typography.headlineSmall,
+                AtlasPosterLabel(displayTitle(card?.title ?: "Lumaire"), color = AtlasText, style = MaterialTheme.typography.headlineSmall,
                     fontWeight = FontWeight.Bold, maxLines = 1, overflow = TextOverflow.Ellipsis, modifier = Modifier.testTag("hero_title"))
                 val line = listOfNotNull(metadata.releaseYear ?: card?.year,
                     metadata.genre ?: card?.let { if (it.contentType == HomeContentType.SeriesEpisode) "Show" else it.contentType.displayName },

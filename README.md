@@ -1,4 +1,6 @@
-# AtlasTV
+# Lumaire
+
+Lumaire was previously named AtlasTV. The existing Android application ID (`com.atlas.atlastv`) and private storage/cache keys remain stable so updates retain saved accounts, libraries and playback progress. The launcher, UI and project use Lumaire. New development settings use the `LUMAIRE_` prefix; existing `ATLASTV_` settings remain supported.
 
 A Kotlin media client designed for a television and a directional remote. Browse movies and series, search a local catalog, maintain a watchlist, and resume playback with AndroidX Media3. Supply your own authorized media source.
 

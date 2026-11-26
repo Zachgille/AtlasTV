@@ -80,7 +80,7 @@ import com.atlas.atlastv.ui.settings.ProviderSettingsDebugBootstrap
 import com.atlas.atlastv.ui.settings.ProviderSettingsStateHolder
 import com.atlas.atlastv.ui.settings.SettingsScreen
 import com.atlas.atlastv.ui.settings.catalogFreshness
-import com.atlas.atlastv.ui.theme.AtlasTvTheme
+import com.atlas.atlastv.ui.theme.LumaireTheme
 import com.atlas.atlastv.ui.theme.AtlasBackground
 import com.atlas.atlastv.ui.theme.AtlasText
 import com.atlas.atlastv.ui.theme.AtlasMutedText
@@ -112,7 +112,7 @@ class MainActivity : ComponentActivity() {
         pendingDebugIntent.value = intent
 
         setContent {
-            AtlasTvTheme {
+            LumaireTheme {
                 var currentScreen by remember { mutableStateOf(AtlasScreen.Home) }
                 var selectedLiveStream by remember { mutableStateOf<LiveTvChannel?>(null) }
                 var selectedPlaybackUrl by remember { mutableStateOf<String?>(null) }

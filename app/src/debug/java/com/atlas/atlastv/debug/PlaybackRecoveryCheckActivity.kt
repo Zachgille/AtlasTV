@@ -9,7 +9,7 @@ import com.atlas.atlastv.playback.WatchProgressRecord
 import com.atlas.atlastv.playback.WatchProgressStore
 import com.atlas.atlastv.ui.debug.DebugLivePlaybackScreen
 import com.atlas.atlastv.ui.livetv.LiveTvChannel
-import com.atlas.atlastv.ui.theme.AtlasTvTheme
+import com.atlas.atlastv.ui.theme.LumaireTheme
 import java.io.File
 import java.util.UUID
 
@@ -28,7 +28,7 @@ class PlaybackRecoveryCheckActivity : ComponentActivity() {
             updatedAtMs = 0L,
         )
         setContent {
-            AtlasTvTheme {
+            LumaireTheme {
             var ready by remember { mutableStateOf(false) }
             LaunchedEffect(Unit) { progressStore.saveRecordAsync(record); ready = true }
             if (ready) {

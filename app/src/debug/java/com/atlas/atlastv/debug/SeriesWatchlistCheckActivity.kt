@@ -6,7 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.runtime.*
 import com.atlas.atlastv.ui.browse.*
 import com.atlas.atlastv.ui.series.*
-import com.atlas.atlastv.ui.theme.AtlasTvTheme
+import com.atlas.atlastv.ui.theme.LumaireTheme
 import kotlinx.coroutines.*
 import java.util.concurrent.atomic.AtomicInteger
 
@@ -75,7 +75,7 @@ class SeriesWatchlistCheckActivity : ComponentActivity() {
     private var playback by mutableStateOf(false)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent { AtlasTvTheme {
+        setContent { LumaireTheme {
             when {
                 destination -> BrowseSearchButton("Shows", { destination = false }, "watchlist_check_home_back")
                 playback -> BrowseSearchButton("Back", { playback = false }, "watchlist_check_playback_back")

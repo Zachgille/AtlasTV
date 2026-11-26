@@ -9,7 +9,7 @@ import com.atlas.atlastv.ui.home.*
 import com.atlas.atlastv.ui.movies.*
 import com.atlas.atlastv.ui.series.*
 import com.atlas.atlastv.ui.browse.*
-import com.atlas.atlastv.ui.theme.AtlasTvTheme
+import com.atlas.atlastv.ui.theme.LumaireTheme
 import kotlinx.coroutines.*
 
 /** Pure in-memory presentation, navigation and progress; no account/files/network. */
@@ -37,7 +37,7 @@ class CardProgressCheckActivity : ComponentActivity() {
     }, scope)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent { AtlasTvTheme { when (destination) {
+        setContent { LumaireTheme { when (destination) {
             "home" -> AtlasHomeScreen(home, onLiveTvSelected = {}, onMoviesSelected = { destination = "movies" }, onSeriesSelected = { destination = "shows" },
                 onHomeCardSelected = { selectedId = it.streamId; destination = "return" }, onRemoveContinueWatching = { card -> records = records.filterNot { it.streamId == card.streamId && (it.contentType == WatchProgressContentType.Movie) == (card.contentType == HomeContentType.Movie) }; home.refresh() })
             "movies" -> MoviesScreen(movies, { destination = "home" }, { selectedId = it.streamId; destination = "return" })

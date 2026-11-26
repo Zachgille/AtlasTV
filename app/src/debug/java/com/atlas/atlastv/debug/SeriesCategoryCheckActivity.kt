@@ -9,7 +9,7 @@ import androidx.compose.ui.platform.testTag
 import androidx.tv.material3.Text
 import com.atlas.atlastv.ui.browse.*
 import com.atlas.atlastv.ui.series.*
-import com.atlas.atlastv.ui.theme.AtlasTvTheme
+import com.atlas.atlastv.ui.theme.LumaireTheme
 import kotlinx.coroutines.*
 import java.util.concurrent.atomic.AtomicInteger
 
@@ -72,7 +72,7 @@ class SeriesCategoryCheckActivity : ComponentActivity() {
                 } })
             } catch (cancelled: CancellationException) { cancelledEpisodes.incrementAndGet(); throw cancelled }
         })
-        setContent { AtlasTvTheme {
+        setContent { LumaireTheme {
             when {
                 destination -> Text("Home", Modifier.testTag("category_check_destination"))
                 playback -> BrowseSearchButton("Back", { playback = false }, "category_check_playback_back")

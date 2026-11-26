@@ -12,7 +12,7 @@ import androidx.tv.material3.Text
 import com.atlas.atlastv.playback.*
 import com.atlas.atlastv.ui.media.*
 import com.atlas.atlastv.ui.series.*
-import com.atlas.atlastv.ui.theme.AtlasTvTheme
+import com.atlas.atlastv.ui.theme.LumaireTheme
 import kotlinx.coroutines.*
 import java.io.ByteArrayOutputStream
 import java.io.File
@@ -43,7 +43,7 @@ class EpisodeRowsCheckActivity : ComponentActivity() {
     }, scope, loadEpisodes = { SeriesEpisodeLoadResult.Success(episodes, SeriesShowMetadata("A concise synopsis.", "Drama", "2020")) })
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent { AtlasTvTheme {
+        setContent { LumaireTheme {
             if (opened != null) {
                 androidx.activity.compose.BackHandler { opened = null }
                 Text("Selected episode", Modifier.testTag("episode_rows_destination"))

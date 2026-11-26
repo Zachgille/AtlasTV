@@ -9,7 +9,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
 import androidx.tv.material3.Text
 import com.atlas.atlastv.ui.settings.*
-import com.atlas.atlastv.ui.theme.AtlasTvTheme
+import com.atlas.atlastv.ui.theme.LumaireTheme
 import com.atlas.atlastv.playback.*
 import com.atlas.atlastv.data.catalog.*
 import kotlinx.coroutines.*
@@ -54,7 +54,7 @@ class SettingsNavigationCheckActivity : ComponentActivity() {
             override suspend fun loadAutoplay() = autoplay
             override suspend fun saveAutoplay(enabled: Boolean) { preferenceWrites++; autoplay = enabled }
         }, scope)
-        setContent { AtlasTvTheme {
+        setContent { LumaireTheme {
             when (screen) {
                 "diagnostics" -> { BackHandler { screen = "settings" }; Text("Diagnostics", Modifier.testTag("navigation_check_diagnostics")) }
                 "home" -> Text("Home", Modifier.testTag("navigation_check_home"))

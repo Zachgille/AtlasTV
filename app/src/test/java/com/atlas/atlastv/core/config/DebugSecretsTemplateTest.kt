@@ -16,7 +16,7 @@ class DebugSecretsTemplateTest {
             StandardCharsets.UTF_8,
         )
 
-        assertTrue(content.contains("ATLASTV_DEBUG_PLAYLIST_URL=http://example.test/"))
+        assertTrue(content.contains("LUMAIRE_DEBUG_PLAYLIST_URL=http://example.test/"))
         assertTrue(content.contains("username=fake_user"))
         assertTrue(content.contains("password=fake_password"))
         assertFalse(content.contains("http://example.test/get.php?username=abc"))

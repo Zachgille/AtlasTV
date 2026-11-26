@@ -10,7 +10,7 @@ import com.atlas.atlastv.data.db.WatchProgressRoomStore
 import com.atlas.atlastv.playback.*
 import com.atlas.atlastv.ui.debug.DebugLivePlaybackScreen
 import com.atlas.atlastv.ui.livetv.LiveTvChannel
-import com.atlas.atlastv.ui.theme.AtlasTvTheme
+import com.atlas.atlastv.ui.theme.LumaireTheme
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import java.io.File
@@ -30,7 +30,7 @@ class PlaybackProgressCheckActivity : ComponentActivity() {
         store = WatchProgressStore(File(cacheDir, "progress-check-$name.json"), WatchProgressRoomStore(database.watchProgressDao()))
         writer = WatchProgressCoordinator.forStore(store)
         setContent {
-            AtlasTvTheme {
+            LumaireTheme {
                 var ready by remember { mutableStateOf<WatchProgressRecord?>(null) }
                 LaunchedEffect(Unit) {
                     val base = WatchProgressRecord(WatchProgressContentType.Movie, 1, title = "Local playback progress check", durationMs = 600_000, positionMs = 255_000, updatedAtMs = System.currentTimeMillis())

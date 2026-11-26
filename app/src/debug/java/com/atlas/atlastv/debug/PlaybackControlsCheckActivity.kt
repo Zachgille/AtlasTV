@@ -28,7 +28,7 @@ class PlaybackControlsCheckActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            AtlasTvTheme {
+            LumaireTheme {
                 if (destination) Text("Returned", Modifier.testTag("playback_controls_destination"))
                 else if (menuFixture) {
                     val audio = (0..11).map { PlaybackTrackOption(PlaybackTrackType.Audio, 0, it, if (it == 10) "English · 5.1" else "Audio ${it + 1}", it == 10) }.let { if (reorder) it.reversed() else it }

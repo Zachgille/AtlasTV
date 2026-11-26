@@ -7,7 +7,7 @@ import androidx.compose.runtime.*
 import com.atlas.atlastv.ui.browse.BrowseRow
 import com.atlas.atlastv.ui.browse.BrowseSearchButton
 import com.atlas.atlastv.ui.movies.*
-import com.atlas.atlastv.ui.theme.AtlasTvTheme
+import com.atlas.atlastv.ui.theme.LumaireTheme
 import kotlinx.coroutines.*
 import kotlinx.coroutines.channels.Channel
 import java.util.concurrent.ConcurrentHashMap
@@ -48,7 +48,7 @@ class MovieDetailCheckActivity : ComponentActivity() {
     }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent { AtlasTvTheme {
+        setContent { LumaireTheme {
             when {
                 destination -> BrowseSearchButton("Home", {}, "movie_check_destination")
                 playback -> BrowseSearchButton("Back", { playback = false }, "movie_check_playback_back")

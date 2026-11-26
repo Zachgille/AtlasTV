@@ -13,7 +13,7 @@ import com.atlas.atlastv.ui.browse.*
 import com.atlas.atlastv.ui.movies.MovieItem
 import com.atlas.atlastv.ui.series.SeriesItem
 import com.atlas.atlastv.ui.search.*
-import com.atlas.atlastv.ui.theme.AtlasTvTheme
+import com.atlas.atlastv.ui.theme.LumaireTheme
 import kotlinx.coroutines.*
 import java.io.File
 
@@ -43,7 +43,7 @@ class SearchSessionCheckActivity : ComponentActivity() {
                 val offset = maxOf(0, anchor / 40 - 2) * 40
                 CatalogGridWindow(total, offset, anchor, (offset until minOf(total, offset + 200)).map { item(query, row, it) })
             }, ::searchResultId, "Couldn't load results.")) }, sessionStore = store, sessionOwner = { "fixture-owner" })
-        setContent { AtlasTvTheme {
+        setContent { LumaireTheme {
             val title = selected
             if (title != null) {
                 BackHandler { selected = null }

@@ -2870,7 +2870,7 @@ class DebugCommandExecutor(
         )
 
     private companion object {
-        private const val TAG = "AtlasTV/DebugCommand"
+        private const val TAG = "Lumaire/DebugCommand"
         private const val SAFE_CATALOG_SNAPSHOT_SCHEMA_VERSION = 1
         private const val DEFAULT_LIVE_EXTENSION = "ts"
         private const val DEFAULT_VOD_EXTENSION = "mp4"

@@ -11,14 +11,14 @@
         android:required="false" />
 
     <application
-        android:name=".AtlasApplication"
+        android:name=".LumaireApplication"
         android:allowBackup="true"
         android:banner="@drawable/ic_launcher"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@drawable/ic_launcher"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AtlasTV">
+        android:theme="@style/Theme.Lumaire">
         <provider android:name="androidx.startup.InitializationProvider"
             android:authorities="${applicationId}.androidx-startup" android:exported="false" tools:node="merge">
             <meta-data android:name="androidx.work.WorkManagerInitializer" tools:node="remove" />
