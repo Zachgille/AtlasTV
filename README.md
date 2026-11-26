@@ -2,8 +2,6 @@
 
 A Kotlin media client designed for a television and a directional remote. Browse movies and series, search a local catalog, maintain a watchlist, and resume playback with AndroidX Media3. Supply your own authorized media source.
 
-[Download the Android Studio project](AtlasTV-source.zip) and extract it before building.
-
 ## Engineering notes
 
 * **Catalog browsing.** Room stores the local catalog. A shared SQL candidate set feeds eight genre shelves per media type. On a physical Onn box, three paired comparisons returned identical shelf ordering and reduced median combined query time from 1,232 ms to 745 ms.

@@ -1,0 +1,13 @@
+#EXTM3U
+#EXTINF:-1 tvg-id="missing.url" tvg-name="Missing URL" group-title="Broken",Missing URL
+# This comment means the previous item has no stream URL before the next EXTINF.
+#EXTINF:-1 tvg-id="valid.after.broken" tvg-name="Valid After Broken" group-title="Recovery",Valid After Broken
+https://streams.example.test/live/valid-after-broken.m3u8
+
+https://streams.example.test/live/orphan-url.m3u8
+
+#EXTINF:-1 tvg-id="no.comma" tvg-name="No Comma" group-title="Broken"
+https://streams.example.test/live/no-comma.m3u8
+
+#EXTINF:-1 tvg-name="No Id" group-title="Missing Optional",No Id
+https://streams.example.test/live/no-id.m3u8

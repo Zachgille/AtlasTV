@@ -1,0 +1,4 @@
+[
+  { "num": 1, "name": "Example Show", "series_id": "301", "cover": "https://cdn.example.test/example-show.png", "plot": "Fake plot", "cast": "Fake Cast", "director": "Fake Director", "genre": "Drama", "releaseDate": "2020", "last_modified": "1", "rating": "8", "rating_5based": "4", "category_id": "20" },
+  { "num": "2", "name": "Korean Show", "series_id": 302, "cover": "https://cdn.example.test/korean-show.png", "category_id": "21" }
+]

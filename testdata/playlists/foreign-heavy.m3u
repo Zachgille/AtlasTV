@@ -1,0 +1,24 @@
+#EXTM3U
+#EXTINF:-1 tvg-id="hindi.movies" tvg-name="Hindi Movies One" tvg-logo="https://cdn.example.test/logos/hindi.png" group-title="Hindi Movies",Hindi Movies One
+https://streams.example.test/live/hindi-movies-one.m3u8
+
+#EXTINF:-1 tvg-id="arabic.news" tvg-name="Arabic News One" tvg-logo="https://cdn.example.test/logos/arabic.png" group-title="Arabic News",Arabic News One
+https://streams.example.test/live/arabic-news-one.m3u8
+
+#EXTINF:-1 tvg-id="spanish.ent" tvg-name="Spanish Entertainment One" tvg-logo="https://cdn.example.test/logos/spanish.png" group-title="Spanish Entertainment",Spanish Entertainment One
+https://streams.example.test/live/spanish-entertainment-one.m3u8
+
+#EXTINF:-1 tvg-id="french.sports" tvg-name="French Sports One" tvg-logo="https://cdn.example.test/logos/french.png" group-title="French Sports",French Sports One
+https://streams.example.test/live/french-sports-one.m3u8
+
+#EXTINF:-1 tvg-id="german.tv" tvg-name="German TV One" tvg-logo="https://cdn.example.test/logos/german.png" group-title="German TV",German TV One
+https://streams.example.test/live/german-tv-one.m3u8
+
+#EXTINF:-1 tvg-id="korean.drama" tvg-name="Korean Drama One" tvg-logo="https://cdn.example.test/logos/korean.png" group-title="Korean Drama",Korean Drama One
+https://streams.example.test/live/korean-drama-one.m3u8
+
+#EXTINF:-1 tvg-id="japanese.movies" tvg-name="Japanese Movies One" tvg-logo="https://cdn.example.test/logos/japanese.png" group-title="Japanese Movies",Japanese Movies One
+https://streams.example.test/live/japanese-movies-one.m3u8
+
+#EXTINF:-1 tvg-id="portuguese.channels" tvg-name="Portuguese Channels One" tvg-logo="https://cdn.example.test/logos/portuguese.png" group-title="Portuguese Channels",Portuguese Channels One
+https://streams.example.test/live/portuguese-channels-one.m3u8

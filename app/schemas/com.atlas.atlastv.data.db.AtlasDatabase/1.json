@@ -1,0 +1,88 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "3ccbf29d36c5c6e0e5382188541fd923",
+    "entities": [
+      {
+        "tableName": "safe_catalog_items",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`contentType` TEXT NOT NULL, `itemId` INTEGER NOT NULL, `title` TEXT NOT NULL, `categoryName` TEXT NOT NULL, `providerOrder` INTEGER NOT NULL, `containerExtension` TEXT, `posterState` TEXT NOT NULL, `posterSafeUri` TEXT, `posterProviderToken` TEXT, `posterRedactedSource` TEXT, `updatedAtMs` INTEGER NOT NULL, PRIMARY KEY(`contentType`, `itemId`))",
+        "fields": [
+          {
+            "fieldPath": "contentType",
+            "columnName": "contentType",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "itemId",
+            "columnName": "itemId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "title",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "categoryName",
+            "columnName": "categoryName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "providerOrder",
+            "columnName": "providerOrder",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "containerExtension",
+            "columnName": "containerExtension",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "posterState",
+            "columnName": "posterState",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "posterSafeUri",
+            "columnName": "posterSafeUri",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "posterProviderToken",
+            "columnName": "posterProviderToken",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "posterRedactedSource",
+            "columnName": "posterRedactedSource",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "updatedAtMs",
+            "columnName": "updatedAtMs",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "contentType",
+            "itemId"
+          ]
+        }
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '3ccbf29d36c5c6e0e5382188541fd923')"
+    ]
+  }
+}

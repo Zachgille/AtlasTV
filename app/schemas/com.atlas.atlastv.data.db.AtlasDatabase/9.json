@@ -1,0 +1,536 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 9,
+    "identityHash": "46945e6769334ecee3ffa58a26bcdebf",
+    "entities": [
+      {
+        "tableName": "safe_catalog_items",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`contentType` TEXT NOT NULL, `itemId` INTEGER NOT NULL, `title` TEXT NOT NULL, `normalizedTitle` TEXT NOT NULL, `categoryId` TEXT, `categoryName` TEXT NOT NULL, `providerOrder` INTEGER NOT NULL, `addedAtMs` INTEGER, `containerExtension` TEXT, `posterState` TEXT NOT NULL, `posterSafeUri` TEXT, `posterProviderToken` TEXT, `posterRedactedSource` TEXT, `importedAtMs` INTEGER NOT NULL, `updatedAtMs` INTEGER NOT NULL, PRIMARY KEY(`contentType`, `itemId`))",
+        "fields": [
+          {
+            "fieldPath": "contentType",
+            "columnName": "contentType",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "itemId",
+            "columnName": "itemId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "title",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "normalizedTitle",
+            "columnName": "normalizedTitle",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "categoryId",
+            "columnName": "categoryId",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "categoryName",
+            "columnName": "categoryName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "providerOrder",
+            "columnName": "providerOrder",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "addedAtMs",
+            "columnName": "addedAtMs",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "containerExtension",
+            "columnName": "containerExtension",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "posterState",
+            "columnName": "posterState",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "posterSafeUri",
+            "columnName": "posterSafeUri",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "posterProviderToken",
+            "columnName": "posterProviderToken",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "posterRedactedSource",
+            "columnName": "posterRedactedSource",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "importedAtMs",
+            "columnName": "importedAtMs",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "updatedAtMs",
+            "columnName": "updatedAtMs",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "contentType",
+            "itemId"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_safe_catalog_items_contentType_providerOrder",
+            "unique": false,
+            "columnNames": [
+              "contentType",
+              "providerOrder"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_safe_catalog_items_contentType_providerOrder` ON `${TABLE_NAME}` (`contentType`, `providerOrder`)"
+          },
+          {
+            "name": "index_safe_catalog_items_contentType_normalizedTitle",
+            "unique": false,
+            "columnNames": [
+              "contentType",
+              "normalizedTitle"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_safe_catalog_items_contentType_normalizedTitle` ON `${TABLE_NAME}` (`contentType`, `normalizedTitle`)"
+          },
+          {
+            "name": "index_safe_catalog_items_contentType_categoryName",
+            "unique": false,
+            "columnNames": [
+              "contentType",
+              "categoryName"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_safe_catalog_items_contentType_categoryName` ON `${TABLE_NAME}` (`contentType`, `categoryName`)"
+          },
+          {
+            "name": "index_safe_catalog_items_contentType_categoryId",
+            "unique": false,
+            "columnNames": [
+              "contentType",
+              "categoryId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_safe_catalog_items_contentType_categoryId` ON `${TABLE_NAME}` (`contentType`, `categoryId`)"
+          },
+          {
+            "name": "index_safe_catalog_items_contentType_addedAtMs",
+            "unique": false,
+            "columnNames": [
+              "contentType",
+              "addedAtMs"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_safe_catalog_items_contentType_addedAtMs` ON `${TABLE_NAME}` (`contentType`, `addedAtMs`)"
+          }
+        ]
+      },
+      {
+        "tableName": "movie_watchlist_items",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`streamId` INTEGER NOT NULL, `title` TEXT, `categoryName` TEXT, `containerExtension` TEXT, `addedAtMs` INTEGER NOT NULL, PRIMARY KEY(`streamId`))",
+        "fields": [
+          {
+            "fieldPath": "streamId",
+            "columnName": "streamId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "title",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "categoryName",
+            "columnName": "categoryName",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "containerExtension",
+            "columnName": "containerExtension",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "addedAtMs",
+            "columnName": "addedAtMs",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "streamId"
+          ]
+        }
+      },
+      {
+        "tableName": "watch_progress_records",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`contentType` TEXT NOT NULL, `streamId` INTEGER NOT NULL, `seriesId` INTEGER, `title` TEXT NOT NULL, `seriesTitle` TEXT, `episodeTitle` TEXT, `categoryName` TEXT, `extension` TEXT, `durationMs` INTEGER, `positionMs` INTEGER NOT NULL, `updatedAtMs` INTEGER NOT NULL, `completed` INTEGER NOT NULL, PRIMARY KEY(`contentType`, `streamId`))",
+        "fields": [
+          {
+            "fieldPath": "contentType",
+            "columnName": "contentType",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "streamId",
+            "columnName": "streamId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "seriesId",
+            "columnName": "seriesId",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "title",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "seriesTitle",
+            "columnName": "seriesTitle",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "episodeTitle",
+            "columnName": "episodeTitle",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "categoryName",
+            "columnName": "categoryName",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "extension",
+            "columnName": "extension",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "durationMs",
+            "columnName": "durationMs",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "positionMs",
+            "columnName": "positionMs",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "updatedAtMs",
+            "columnName": "updatedAtMs",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "completed",
+            "columnName": "completed",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "contentType",
+            "streamId"
+          ]
+        }
+      },
+      {
+        "tableName": "series_watchlist_items",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`seriesId` INTEGER NOT NULL, `title` TEXT, `categoryName` TEXT, `addedAtMs` INTEGER NOT NULL, PRIMARY KEY(`seriesId`))",
+        "fields": [
+          {
+            "fieldPath": "seriesId",
+            "columnName": "seriesId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "title",
+            "columnName": "title",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "categoryName",
+            "columnName": "categoryName",
+            "affinity": "TEXT"
+          },
+          {
+            "fieldPath": "addedAtMs",
+            "columnName": "addedAtMs",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "seriesId"
+          ]
+        }
+      },
+      {
+        "tableName": "provider_artwork",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`token` TEXT NOT NULL, `address` TEXT NOT NULL, PRIMARY KEY(`token`))",
+        "fields": [
+          {
+            "fieldPath": "token",
+            "columnName": "token",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "address",
+            "columnName": "address",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "token"
+          ]
+        }
+      },
+      {
+        "tableName": "artwork_migrations",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`source` TEXT NOT NULL, PRIMARY KEY(`source`))",
+        "fields": [
+          {
+            "fieldPath": "source",
+            "columnName": "source",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "source"
+          ]
+        }
+      },
+      {
+        "tableName": "show_details_cache",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`providerKey` TEXT NOT NULL, `seriesId` INTEGER NOT NULL, `requestedAtMs` INTEGER NOT NULL, `savedAtMs` INTEGER NOT NULL, `catalogAtMs` INTEGER, `accessedAtMs` INTEGER NOT NULL, `payloadBytes` INTEGER NOT NULL, `payload` TEXT NOT NULL, PRIMARY KEY(`providerKey`, `seriesId`))",
+        "fields": [
+          {
+            "fieldPath": "providerKey",
+            "columnName": "providerKey",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "seriesId",
+            "columnName": "seriesId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "requestedAtMs",
+            "columnName": "requestedAtMs",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "savedAtMs",
+            "columnName": "savedAtMs",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "catalogAtMs",
+            "columnName": "catalogAtMs",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "accessedAtMs",
+            "columnName": "accessedAtMs",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "payloadBytes",
+            "columnName": "payloadBytes",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "payload",
+            "columnName": "payload",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "providerKey",
+            "seriesId"
+          ]
+        }
+      },
+      {
+        "tableName": "movie_details_cache",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`providerKey` TEXT NOT NULL, `streamId` INTEGER NOT NULL, `requestedAtMs` INTEGER NOT NULL, `savedAtMs` INTEGER NOT NULL, `catalogAtMs` INTEGER, `accessedAtMs` INTEGER NOT NULL, `payloadBytes` INTEGER NOT NULL, `payload` TEXT NOT NULL, PRIMARY KEY(`providerKey`, `streamId`))",
+        "fields": [
+          {
+            "fieldPath": "providerKey",
+            "columnName": "providerKey",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "streamId",
+            "columnName": "streamId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "requestedAtMs",
+            "columnName": "requestedAtMs",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "savedAtMs",
+            "columnName": "savedAtMs",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "catalogAtMs",
+            "columnName": "catalogAtMs",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "accessedAtMs",
+            "columnName": "accessedAtMs",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "payloadBytes",
+            "columnName": "payloadBytes",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "payload",
+            "columnName": "payload",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "providerKey",
+            "streamId"
+          ]
+        }
+      },
+      {
+        "tableName": "home_hero_cache",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`providerKey` TEXT NOT NULL, `metadataKey` TEXT NOT NULL, `requestedAtMs` INTEGER NOT NULL, `savedAtMs` INTEGER NOT NULL, `catalogAtMs` INTEGER, `accessedAtMs` INTEGER NOT NULL, `payloadBytes` INTEGER NOT NULL, `payload` TEXT NOT NULL, PRIMARY KEY(`providerKey`, `metadataKey`))",
+        "fields": [
+          {
+            "fieldPath": "providerKey",
+            "columnName": "providerKey",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "metadataKey",
+            "columnName": "metadataKey",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "requestedAtMs",
+            "columnName": "requestedAtMs",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "savedAtMs",
+            "columnName": "savedAtMs",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "catalogAtMs",
+            "columnName": "catalogAtMs",
+            "affinity": "INTEGER"
+          },
+          {
+            "fieldPath": "accessedAtMs",
+            "columnName": "accessedAtMs",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "payloadBytes",
+            "columnName": "payloadBytes",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "payload",
+            "columnName": "payload",
+            "affinity": "TEXT",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "providerKey",
+            "metadataKey"
+          ]
+        }
+      }
+    ],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '46945e6769334ecee3ffa58a26bcdebf')"
+    ]
+  }
+}

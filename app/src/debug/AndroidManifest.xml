@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application android:usesCleartextTraffic="true">
+        <activity android:name=".debug.SearchSessionCheckActivity" android:exported="false" />
+        <activity android:name=".debug.HomeCardPostersCheckActivity" android:exported="true" />
+        <activity android:name=".debug.GridHeaderCheckActivity" android:exported="true" />
+        <activity android:name=".debug.HomeHeroCacheCheckActivity" android:exported="true" />
+        <activity android:name=".debug.MovieDetailsCacheCheckActivity" android:exported="true" />
+        <activity android:name=".debug.ShowDetailsCacheCheckActivity" android:exported="true" />
+        <activity android:name=".debug.StartOverCheckActivity" android:exported="true" />
+        <activity android:name=".debug.TrackPreferencesCheckActivity" android:exported="true" />
+        <activity android:name=".debug.EpisodeRowsCheckActivity" android:exported="true" />
+        <activity android:name=".debug.CardProgressCheckActivity" android:exported="true" />
+        <activity android:name=".debug.MyListCheckActivity" android:exported="true" />
+        <activity android:name=".debug.SeriesWatchlistCheckActivity" android:exported="true" />
+        <activity android:name=".debug.MovieWatchlistCheckActivity" android:exported="true" />
+        <activity android:name=".debug.SeriesCategoryCheckActivity" android:exported="true" />
+        <activity android:name=".debug.MovieCategoryCheckActivity" android:exported="true" />
+        <activity android:name=".debug.PlaybackPreferencesCheckActivity" android:exported="true" />
+        <activity android:name=".debug.NextEpisodeCheckActivity" android:exported="true" />
+        <activity android:name=".debug.HomeHeroCheckActivity" android:exported="true" />
+        <activity android:name=".debug.MovieDetailCheckActivity" android:exported="true" />
+        <activity android:name=".debug.PlaybackControlsCheckActivity" android:exported="true" />
+        <activity android:name=".debug.LibraryUsabilityCheckActivity" android:exported="true" />
+        <activity android:name=".debug.SearchPagingCheckActivity" android:exported="true" />
+        <activity android:name=".debug.SeriesGridCheckActivity" android:exported="true" />
+        <activity android:name=".debug.MovieGridCheckActivity" android:exported="true" />
+        <activity android:name=".debug.PlaybackRecoveryCheckActivity" android:exported="true" />
+        <activity android:name=".debug.PlaybackBackupCheckActivity" android:exported="false" />
+        <activity android:name=".debug.PlaybackProgressCheckActivity" android:exported="true" />
+        <activity android:name=".debug.PlaybackStartCheckActivity" android:exported="true" />
+        <activity android:name=".debug.HomeLoadingCheckActivity" android:exported="true" />
+        <activity android:name=".debug.MoviesLoadingCheckActivity" android:exported="true" />
+        <activity android:name=".debug.SeriesLoadingCheckActivity" android:exported="true" />
+        <receiver
+            android:name=".debug.DebugCommandReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.atlas.atlastv.DEBUG_COMMAND" />
+            </intent-filter>
+        </receiver>
+        <activity android:name=".debug.SettingsNavigationCheckActivity" android:exported="true" />
+        <activity android:name=".debug.MovieCategoryPreviewCheckActivity" android:exported="true" />
+        <activity android:name=".debug.DiscoveryCheckActivity" android:exported="false" />
+        <activity android:name=".debug.MovieBrowseSessionCheckActivity" android:exported="false" />
+        <activity android:name=".debug.SeriesBrowseSessionCheckActivity" android:exported="false" />
+</application>
+</manifest>
